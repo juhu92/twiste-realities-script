@@ -5,7 +5,7 @@
 ## Installation der Requirements
 
 Mache einen neuen Ordner indem der Twist-Code arbeiten kann. 
-Dann das Terminal öffnen und folgende Befehle rein kopieren und Enter drücken (fragt nach computerpasswort):
+Dann das Terminal öffnen und folgende Befehle rein kopieren und Enter drücken (fragt nach Computerpasswort):
 
 ```bash
 sudo easy_install pillow
