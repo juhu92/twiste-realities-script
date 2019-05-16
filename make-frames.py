@@ -2,13 +2,9 @@ from PIL import Image
 import sys
 
 
-firstImg = Image.open("./serie/0000.png")
-frameSize = firstImg.width, firstImg.height
-firstImg.close()
-
 
 def fi (i):
-  return str(i).zfill(4)
+  return str(i).zfill(6)
 
 
 
@@ -21,7 +17,7 @@ def makeframe(start_index):
   frame = Image.new("RGB", frameSize)
   source_index = start_index
   for y in range(frameSize[1]):
-    source = Image.open("./serie/"+fi(source_index)+".png")
+    source = Image.open("./input/"+fi(source_index)+".png")
     writeRowToFrame( frame, source, y )
     print "frame: "+str(start_index)+ " row:"+fi(source_index)
     source.close()
@@ -36,8 +32,14 @@ def makeframe(start_index):
 
 
 
+firstImg = Image.open("./input/000000.png")
+frameSize = firstImg.width, firstImg.height
+firstImg.close()
+
+
 inputstr = raw_input("enter [1] for rendering a single frame \nenter [2] for rendering all frames:\n")
 print inputstr
+
 
 if inputstr == "1":
   makeframe(0)
@@ -47,5 +49,6 @@ elif inputstr == "2":
 else:
   print "nothing done..."
   sys.exit();
+
 
 
